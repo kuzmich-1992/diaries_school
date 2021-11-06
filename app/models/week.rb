@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Week < ApplicationRecord
   has_many :days
   validates :month, presence: true

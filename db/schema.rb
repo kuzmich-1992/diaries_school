@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,54 +12,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_04_205007) do
-
+ActiveRecord::Schema.define(version: 20_211_104_205_007) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "days", force: :cascade do |t|
-    t.string "day_of_week"
-    t.integer "date"
-    t.string "subject_1"
-    t.string "home_task_1"
-    t.integer "grade_1"
-    t.string "subject_2"
-    t.string "home_task_2"
-    t.integer "grade_2"
-    t.string "subject_3"
-    t.string "home_task_3"
-    t.integer "grade_3"
-    t.string "subject_4"
-    t.string "home_task_4"
-    t.integer "grade_4"
-    t.string "subject_5"
-    t.string "home_task_5"
-    t.integer "grade_5"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "week_id"
-    t.index ["week_id"], name: "index_days_on_week_id"
+  create_table 'days', force: :cascade do |t|
+    t.string 'day_of_week'
+    t.integer 'date'
+    t.string 'subject_1'
+    t.string 'home_task_1'
+    t.integer 'grade_1'
+    t.string 'subject_2'
+    t.string 'home_task_2'
+    t.integer 'grade_2'
+    t.string 'subject_3'
+    t.string 'home_task_3'
+    t.integer 'grade_3'
+    t.string 'subject_4'
+    t.string 'home_task_4'
+    t.integer 'grade_4'
+    t.string 'subject_5'
+    t.string 'home_task_5'
+    t.integer 'grade_5'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.bigint 'week_id'
+    t.index ['week_id'], name: 'index_days_on_week_id'
   end
 
-  create_table "diaries", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "surname", null: false
-    t.string "high_school_class", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'diaries', force: :cascade do |t|
+    t.string 'name', null: false
+    t.string 'surname', null: false
+    t.string 'high_school_class', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "weeks", force: :cascade do |t|
-    t.string "month", null: false
-    t.string "behavior", null: false
-    t.text "teacher_notes"
-    t.integer "number_of_missed_lessons", null: false
-    t.bigint "diary_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["diary_id"], name: "index_weeks_on_diary_id"
+  create_table 'weeks', force: :cascade do |t|
+    t.string 'month', null: false
+    t.string 'behavior', null: false
+    t.text 'teacher_notes'
+    t.integer 'number_of_missed_lessons', null: false
+    t.bigint 'diary_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['diary_id'], name: 'index_weeks_on_diary_id'
   end
 
-  add_foreign_key "days", "weeks"
-  add_foreign_key "weeks", "diaries"
+  add_foreign_key 'days', 'weeks'
+  add_foreign_key 'weeks', 'diaries'
 end

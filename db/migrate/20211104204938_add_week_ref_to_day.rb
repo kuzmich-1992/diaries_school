@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddWeekRefToDay < ActiveRecord::Migration[5.2]
   def change
     add_reference :days, :week, foreign_key: true
