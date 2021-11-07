@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class DiariesController < ApplicationController
+  
+  before_action :load_entities
+
   def new
     @diary = Diary.new
   end
