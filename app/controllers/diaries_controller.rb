@@ -3,7 +3,7 @@
 class DiariesController < ApplicationController
   def index
     diary = Diary.all.order(created_at: :desc)
-    render json: diary
+    # render json: diary
   end
 
   def create
